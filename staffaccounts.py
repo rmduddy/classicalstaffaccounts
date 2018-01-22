@@ -7,7 +7,6 @@
 # Use at your own risk, no liability assumed. Released under the MIT license.
 # for more info see https://github.com/rmduddy/staffaccounts
 
-import datetime
 import config as cfg
 
 class Employee:
