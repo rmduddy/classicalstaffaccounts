@@ -12,9 +12,9 @@ import config as cfg
 
 class Employee:
 	
-	def __init__(self, firstname, lastname):
-		self.firstname = firstname
-		self.lastname = lastname
+	def __init__(self):
+		self.firstname = ""
+		self.lastname = ""
 		self.site = ""
 		self.distributionlists = []
 		self.schoologyrole = ""
@@ -40,11 +40,12 @@ class Employee:
 		return password
 
 def get_employee_info():
-	firstname = raw_input("First name of new employee:")
-	lastname = raw_input("Last name of new employee:")
-	
-	employee = Employee(firstname, lastname)
-	
+
+	employee = Employee()
+
+	employee.firstname = raw_input("First name of new employee:")
+	employee.lastname = raw_input("Last name of new employee:")
+		
 	print ("First name: %s" % employee.firstname)
 	print ("Last name:  %s" % employee.lastname)
 	print ("Primary:    %s" % employee.primaryemail())
