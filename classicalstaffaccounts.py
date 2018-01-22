@@ -39,6 +39,8 @@ class Employee:
 	def password(self):
 		date = datetime.datetime.now()
 		date = date.strftime("%m%d%y")
+		#Obiously this is not my password structure, be sure to create a good
+		#standard or generate randomly
 		password = "%s!%s!%s!" % (self.firstname[:1], self.lastname[:1], date)
 		return password.lower()
 
