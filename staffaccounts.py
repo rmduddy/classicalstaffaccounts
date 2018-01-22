@@ -6,10 +6,9 @@
 #
 # Use at your own risk, no liability assumed. Released under the MIT license.
 # for more info see https://github.com/rmduddy/staffaccounts
-import datetime
 
-primaryemaildomain = "@primary.com"
-secondaryemaildomain = "@secondary.com"
+import datetime
+import config as cfg
 
 class Employee:
 	
@@ -22,13 +21,13 @@ class Employee:
 	
 	def primaryemail(self):
 		primaryemail = "%s%s%s" % (
-			self.firstname[:1], self.lastname, primaryemaildomain
+			self.firstname[:1], self.lastname, cfg.domains['primary']
 			)
 		return primaryemail.lower()
 		
 	def secondaryemail(self):
 		secondaryemail = "%s%s%s" % (
-			self.firstname, self.lastname, secondaryemaildomain
+			self.firstname, self.lastname, cfg.domains['secondary']
 			)
 		return secondaryemail.lower()
 		
@@ -37,12 +36,8 @@ class Employee:
 		return schoologyaccount
 		
 	def password(self):
-		date = datetime.datetime.now()
-		date = date.strftime("%m%d%y")
-		#Obiously this is not my password structure, be sure to create a good
-		#standard or generate randomly
-		password = "%s!%s!%s!" % (self.firstname[:1], self.lastname[:1], date)
-		return password.lower()
+		password = cfg.passwordgenerator(self.firstname, self.lastname)
+		return password
 
 def get_employee_info():
 	firstname = raw_input("First name of new employee:")
