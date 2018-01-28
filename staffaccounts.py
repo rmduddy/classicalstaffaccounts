@@ -8,6 +8,7 @@
 # for more info see https://github.com/rmduddy/staffaccounts
 
 import config as cfg
+import primary_auth as prm
 
 class Employee:
 	
@@ -53,14 +54,15 @@ def get_employee_info():
 	print ("Password:   %s" % employee.password())
 	return employee;
 
-def primary_email_create():
+def primary_email_create(employee):
 	print("Creating primary email...")
+	prm.main(employee)
+
 	
 	
 def main():
 	employee = get_employee_info()
-	print (employee.primaryemail)
-	primary_email_create()
+	primary_email_create(employee)
 	return;
 
 main()

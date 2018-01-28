@@ -7,7 +7,11 @@ domains = {
 	}
 
 #Names of our Oauth files
+googleappname = 'Example App Name'
+
 primaryauth = 'primary_secret.json'
+primaryorgpath = '/Example/Example'
+
 secondarauth = 'secondary_secret.json'
 schoologyauth = 'schoology_config.yml'
 
