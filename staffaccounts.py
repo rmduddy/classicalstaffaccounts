@@ -8,7 +8,7 @@
 # for more info see https://github.com/rmduddy/staffaccounts
 
 import config as cfg
-import primary_auth as prm
+import primary_create as prm
 
 class Employee:
 	
