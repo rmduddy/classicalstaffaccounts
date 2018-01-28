@@ -52,9 +52,15 @@ def get_employee_info():
 	print ("Schoology:  %s" % employee.schoologyaccount())
 	print ("Password:   %s" % employee.password())
 	return employee;
+
+def primary_email_create():
+	print("Creating primary email...")
+	
 	
 def main():
-	get_employee_info()
+	employee = get_employee_info()
+	print (employee.primaryemail)
+	primary_email_create()
 	return;
 
 main()
